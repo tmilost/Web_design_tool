@@ -82,8 +82,6 @@ export default {
   border: 15px, darkblue;
   border-style: dashed;
 }
-.tool-bar {
-}
 .mainCanvas{
     background-color: aqua;
      width: 100%;
