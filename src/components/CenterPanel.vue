@@ -24,7 +24,7 @@
       </svg>
       <el-dropdown>
         <span class="el-dropdown-link">
-          {{ deviceSizeValue }}
+          {{ changeString(deviceSizeValue) }}
           <i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
@@ -155,6 +155,16 @@ export default {
       this.deviceSizeValue = this.devicesSize[
         this.deviceNames.indexOf(deviceName)
       ];
+    },
+    changeString(str) {
+      var i = str.indexOf(";");
+      str = str.split("");
+
+      str[i] = " x ";
+      var c = str.indexOf(";");
+      str[c] = "  ";
+      str = str.join("");
+      return str;
     },
   },
   computed: {
