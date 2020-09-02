@@ -22,6 +22,22 @@
           d="M15.5,14H14.71L14.43,13.73C15.41,12.59 16,11.11 16,9.5A6.5,6.5 0 0,0 9.5,3A6.5,6.5 0 0,0 3,9.5A6.5,6.5 0 0,0 9.5,16C11.11,16 12.59,15.41 13.73,14.43L14,14.71V15.5L19,20.5L20.5,19L15.5,14M9.5,14C7,14 5,12 5,9.5C5,7 7,5 9.5,5C12,5 14,7 14,9.5C14,12 12,14 9.5,14M7,9H12V10H7V9Z"
         />
       </svg>
+      <el-dropdown>
+        <span class="el-dropdown-link">
+          {{ deviceSizeValue }}
+          <i class="el-icon-arrow-down el-icon--right"></i>
+        </span>
+        <el-dropdown-menu slot="dropdown">
+          <div
+            v-for="a in deviceNames"
+            v-bind:key="a"
+            v-on:click="changeCanvasSize(a)"
+          >
+            <el-dropdown-item>{{ a }}</el-dropdown-item>
+          </div>
+        </el-dropdown-menu>
+      </el-dropdown>
+      <p>@</p>
       <p>{{ zoomChange }}</p>
     </div>
     <div class="mainCanvas">
@@ -63,7 +79,7 @@ export default {
         "transform:scale(1.75,1.75)",
         "transform:scale(2.0,2.0)",
       ],
-      deviceSize: [
+      devicesSize: [
         "width:412px;height:892px;",
         "width:360px;height:760px",
         "width:360px;height:780px",
@@ -85,7 +101,7 @@ export default {
         "width:1600px;height:900px",
         "width:1920px;height:1080px",
       ],
-      deviceName: [
+      deviceNames: [
         "OnePlus 7",
         "Galaxy S10",
         "LG G8",
@@ -135,6 +151,11 @@ export default {
       var data = ev.dataTransfer.getData("text");
       ev.target.appendChild(document.getElementById(data));
     },
+    changeCanvasSize(deviceName) {
+      this.deviceSizeValue = this.devicesSize[
+        this.deviceNames.indexOf(deviceName)
+      ];
+    },
   },
   computed: {
     zoomChange() {
@@ -178,10 +199,16 @@ svg {
 svg:hover {
   background: linear-gradient(#33383c, #2f3438);
 }
+.el-dropdown {
+  color: #fff;
+  padding: 1px;
+  margin: 7px;
+  float: left;
+}
 p {
   float: left;
   padding: 1px;
-  margin: 9px;
+  margin: 9px 0px 9px 0px;
   color: #fff;
   font-size: 12px;
 }
