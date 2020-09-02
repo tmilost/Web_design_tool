@@ -12,12 +12,15 @@
           <el-input placeholder="Filter keyword" v-model="filterText">
           </el-input>
         </div>
+        <!-- sadasdasd -->
+        <button id="drag1" draggable="true" v-on:dragstart="drag" type="button">
+          Drag me!
+        </button>
         <div class="tree">
           <el-tree
-          empty-text="No component were found"
+            empty-text="No component were found"
             class="filter-tree"
             :data="components"
-            :props="defaultProps"
             default-expand-all
             :filter-node-method="filterNode"
             ref="tree2"
@@ -42,10 +45,23 @@ export default {
       if (!value) return true;
       return data.label.indexOf(value) !== -1;
     },
+    allowDrop(ev) {
+      ev.preventDefault();
+    },
+
+    drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    },
+
+    drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    },
   },
   data: function() {
     return {
-       filterText: '',
+      filterText: "",
       components: [
         {
           label: "Controls",
@@ -53,7 +69,7 @@ export default {
             {
               label: "Button",
             },
-              {
+            {
               label: "Split Button",
             },
             {
@@ -65,7 +81,7 @@ export default {
             {
               label: "Dropdown",
             },
-             {
+            {
               label: "Link",
             },
           ],
@@ -97,8 +113,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.toolBox {
+  height: calc(100vh - 37px);
+  float: left;
+  padding-top: 2px;
+  padding-right: 2px;
+  background: radial-gradient(#262a2d, #212527);
+}
 .toolboxSize {
-  width: 1250px;
+  width: 250px;
+
   align-items: left;
 }
 .text {
@@ -118,10 +142,7 @@ export default {
   clear: both;
 }
 
-.box-card {
-  width: 220px;
-}
-.tree{
+.tree {
   margin-top: 25px;
 }
 </style>

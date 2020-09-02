@@ -1,22 +1,32 @@
 <template>
   <div class="home">
-   
+    <Menu />
     <ToolBox />
-    <CenterPanel/>
-        <!-- <ToolBox msg="Welcome to Your Vue.js App"/> -->
+    <CenterPanel />
+    <RightPanel />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import ToolBox from '@/components/ToolBox.vue'
-import CenterPanel from '@//components/CenterPanel.vue'
+import ToolBox from "@/components/ToolBox.vue";
+import CenterPanel from "@//components/CenterPanel.vue";
+import Menu from "@//components/Menu.vue";
+import RightPanel from "@//components/RightPanel.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     ToolBox,
-    CenterPanel
-  }
-}
+    CenterPanel,
+    Menu,
+    RightPanel,
+  },
+};
 </script>
+<style scoped>
+.home {
+  height: 100vh;
+  width: 100vw;
+}
+</style>

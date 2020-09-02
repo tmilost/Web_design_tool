@@ -1,22 +1,37 @@
 <template>
-  <div class="panel" >
+  <div class="panel" v-on:drop="drop" v-on:dragover="allowDrop">
     <div class="tool-bar">
-      <el-button
-        icon="el-icon-search"
-        circle
+      <svg
+        style="width:24px;height:24px;color: #fff;"
+        viewBox="0 0 24 24"
         v-on:click="caculateZoomUp()"
-      ></el-button>
-      <el-button icon="el-icon-search" circle  v-on:click="caculateZoomDown()"></el-button>
-      {{ zoomChange }}
+      >
+        <path
+          fill="currentColor"
+          d="M15.5,14L20.5,19L19,20.5L14,15.5V14.71L13.73,14.43C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.43,13.73L14.71,14H15.5M9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14M12,10H10V12H9V10H7V9H9V7H10V9H12V10Z"
+        />
+      </svg>
+
+      <svg
+        style="width:24px;height:24px;color: #fff;"
+        viewBox="0 0 24 24"
+        v-on:click="caculateZoomDown()"
+      >
+        <path
+          fill="currentColor"
+          d="M15.5,14H14.71L14.43,13.73C15.41,12.59 16,11.11 16,9.5A6.5,6.5 0 0,0 9.5,3A6.5,6.5 0 0,0 3,9.5A6.5,6.5 0 0,0 9.5,16C11.11,16 12.59,15.41 13.73,14.43L14,14.71V15.5L19,20.5L20.5,19L15.5,14M9.5,14C7,14 5,12 5,9.5C5,7 7,5 9.5,5C12,5 14,7 14,9.5C14,12 12,14 9.5,14M7,9H12V10H7V9Z"
+        />
+      </svg>
+      <p>{{ zoomChange }}</p>
     </div>
     <div class="mainCanvas">
-    <div class="canvas" >
+      <div class="canvas" :style="deviceSizeValue">
         <div :style="zoomChange1">
-      asdasdasdasd asd asd asd asd asd asd asd asd asd asd asdasdasdasda sd asd
-      asd asd asd
+          asdasdasdasd asd asd asd asd asd asd asd asd asd asd asdasdasdasda sd
+          asd asd asd asd
 
-      <img src="@/assets/logo.png" alt="Italian Trulli" />
-      </div>
+          <img src="@/assets/logo.png" alt="Italian Trulli" />
+        </div>
       </div>
     </div>
   </div>
@@ -48,7 +63,52 @@ export default {
         "transform:scale(1.75,1.75)",
         "transform:scale(2.0,2.0)",
       ],
+      deviceSize: [
+        "height:412px;width:892px;",
+        "height:360px;width:760px",
+        "height:360px;width:780px",
+        "height:412px;width:824px",
+        "height:412px;width:847px",
+        "height:375px;width:812px",
+        "height:375px;width:667px",
+        "height:414px;width:736px",
+        "height:1024px;width:1366px",
+        "height:768px;width:1024px",
+        "height:1280px;width:900px",
+        "height:1280px;width:800px",
+        "height:1280px;width:800px",
+        "height:1440px;width:900px",
+        "height:1368px;width:912px",
+        "height:1280px;width:850px",
+        "height:1366px;width:768px",
+        "height:1440px;width:900px",
+        "height:1600px;width:900px",
+        "height:1920px;width:1080px",
+      ],
+      deviceName: [
+        "OnePlus 7",
+        "Galaxy S10",
+        "LG G8",
+        "Google Pixel 3",
+        "Google Pixel 3 XL",
+        "iPhone XS",
+        "iPhone 8",
+        "iPhone 8 plus",
+        "iPad Pro",
+        "iPad Air",
+        "Google Pixel C",
+        "MacBook Air",
+        'MacBook 13"',
+        'MacBook 15"',
+        "Microsoft Surface Pro",
+        "ChromeBook Pixel",
+        "Desktop HD",
+        "Desktop WXGA+",
+        "Desktop HD+",
+        "Desktop FHD+",
+      ],
       zoomChangeValue: 4,
+      deviceSizeValue: "height:1920px;width:1080px",
     };
   },
   methods: {
@@ -61,6 +121,19 @@ export default {
       if (this.zoomChangeValue > 1) {
         --this.zoomChangeValue;
       }
+    },
+    allowDrop(ev) {
+      ev.preventDefault();
+    },
+
+    drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    },
+
+    drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
     },
   },
   computed: {
@@ -77,21 +150,40 @@ export default {
 <style scoped>
 .panel {
   margin: auto;
-  width: 50%;
-  height: 50%;
-  border: 15px, darkblue;
-  border-style: dashed;
+  width: calc(100vw - 481px);
+  height: calc(100vh - 37px);
+  background: radial-gradient(#262a2d, #212527);
+  float: left;
+  padding-top: 2px;
 }
-.mainCanvas{
-    background-color: aqua;
-     width: 100%;
-  height: 100%;
+.mainCanvas {
+  max-width: 500px;
+  max-height: 500px;
+  overflow: scroll;
 }
 .canvas {
   margin: 5% 10% 5% 10%;
   padding: 150px;
   overflow: scroll;
-  width: 200px;
-  height: 10px;
+  background-color: antiquewhite;
+}
+.tool-bar {
+  background: #4d575f;
+  height: 35px;
+}
+svg {
+  padding: 1px;
+  margin: 5px;
+  float: left;
+}
+svg:hover {
+  background: linear-gradient(#33383c, #2f3438);
+}
+p {
+  float: left;
+  padding: 1px;
+  margin: 9px;
+  color: #fff;
+  font-size: 12px;
 }
 </style>
