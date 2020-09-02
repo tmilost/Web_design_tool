@@ -64,26 +64,26 @@ export default {
         "transform:scale(2.0,2.0)",
       ],
       deviceSize: [
-        "height:412px;width:892px;",
-        "height:360px;width:760px",
-        "height:360px;width:780px",
-        "height:412px;width:824px",
-        "height:412px;width:847px",
-        "height:375px;width:812px",
-        "height:375px;width:667px",
-        "height:414px;width:736px",
-        "height:1024px;width:1366px",
-        "height:768px;width:1024px",
-        "height:1280px;width:900px",
-        "height:1280px;width:800px",
-        "height:1280px;width:800px",
-        "height:1440px;width:900px",
-        "height:1368px;width:912px",
-        "height:1280px;width:850px",
-        "height:1366px;width:768px",
-        "height:1440px;width:900px",
-        "height:1600px;width:900px",
-        "height:1920px;width:1080px",
+        "width:412px;height:892px;",
+        "width:360px;height:760px",
+        "width:360px;height:780px",
+        "width:412px;height:824px",
+        "width:412px;height:847px",
+        "width:375px;height:812px",
+        "width:375px;height:667px",
+        "width:414px;height:736px",
+        "width:1024px;height:1366px",
+        "width:768px;height:1024px",
+        "width:1280px;height:900px",
+        "width:1280px;height:800px",
+        "width:1280px;height:800px",
+        "width:1440px;height:900px",
+        "width:1368px;height:912px",
+        "width:1280px;height:850px",
+        "width:1366px;height:768px",
+        "width:1440px;height:900px",
+        "width:1600px;height:900px",
+        "width:1920px;height:1080px",
       ],
       deviceName: [
         "OnePlus 7",
@@ -108,7 +108,7 @@ export default {
         "Desktop FHD+",
       ],
       zoomChangeValue: 4,
-      deviceSizeValue: "height:1920px;width:1080px",
+      deviceSizeValue: "width:360px;height:412px;",
     };
   },
   methods: {
@@ -163,7 +163,6 @@ export default {
 }
 .canvas {
   margin: 5% 10% 5% 10%;
-  padding: 150px;
   overflow: scroll;
   background-color: antiquewhite;
 }
