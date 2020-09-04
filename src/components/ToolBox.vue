@@ -1,18 +1,15 @@
 <template>
   <div class="toolBox">
     <div class="toolboxSize">
-      <el-card class="box-card">
-        <div slot="header" class="clearfix">
-          <span>ToolBox</span>
-          <el-button style="float: right; padding: 3px 4px 3px 4px" size="mini"
-            >X</el-button
-          >
-        </div>
+      <div class="box-card">
         <div class="search">
-          <el-input placeholder="Filter keyword" v-model="filterText">
+          <el-input
+            placeholder="Search components"
+            v-model="filterText"
+            size="mini"
+          >
           </el-input>
         </div>
-        <!-- sadasdasd -->
         <button id="drag1" draggable="true" v-on:dragstart="drag" type="button">
           Drag me!
         </button>
@@ -27,7 +24,7 @@
           >
           </el-tree>
         </div>
-      </el-card>
+      </div>
     </div>
   </div>
 </template>
@@ -112,12 +109,12 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 .toolBox {
   height: calc(100vh - 37px);
   float: left;
   margin-top: 2px;
-  padding-right: 2px;
+  margin-right: 2px;
   /* saved this for later */
   /* background: radial-gradient(#262a2d, #212527); */
   background-color: #2c3134;
@@ -146,5 +143,27 @@ export default {
 
 .tree {
   margin-top: 25px;
+  background-color: #2c3134;
+}
+.el-tree {
+  background-color: #2c3134 !important;
+  color: #fff;
+}
+.box-card {
+  padding: 9%;
+}
+span {
+  color: #fff;
+}
+input.el-input__inner {
+  background-color: #3b4146;
+  border-color: #3b4146;
+  font-family: "Source Sans Pro", sans-serif;
+}
+input.el-input__inner:hover {
+  border-color: #3b4146;
+}
+.el-tree-node__content:hover {
+  background-color: #3b4146d3 !important;
 }
 </style>
