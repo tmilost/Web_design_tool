@@ -40,9 +40,9 @@
       <p>@</p>
       <p>{{ zoomChange }}</p>
     </div>
-    <div class="mainCanvas">
+    <div class="mainCanvas" :style="zoomChange1">
       <div class="canvas" :style="deviceSizeValue">
-        <div :style="zoomChange1">
+        <div>
           asdasdasdasd asd asd asd asd asd asd asd asd asd asd asdasdasdasda sd
           asd asd asd asd
 
@@ -188,12 +188,12 @@ export default {
   padding-top: 2px;
 }
 .mainCanvas {
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 200vw;
+  max-height: 70vh;
+  margin: 2vh 5vw 0vh 5vw;
   overflow: scroll;
 }
 .canvas {
-  margin: 5% 10% 5% 10%;
   overflow: scroll;
   background-color: antiquewhite;
 }
