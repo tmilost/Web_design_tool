@@ -10,9 +10,7 @@
           >
           </el-input>
         </div>
-        <button id="drag1" draggable="true" v-on:dragstart="drag" type="button">
-          Drag me!
-        </button>
+
         <div class="tree">
           <el-tree
             empty-text="No component were found"
@@ -23,6 +21,15 @@
             ref="tree2"
           >
           </el-tree>
+          <button
+            id="drag1"
+            style="margin-top:55px;"
+            draggable="true"
+            v-on:dragstart="drag"
+            type="button"
+          >
+            Drag me!
+          </button>
         </div>
       </div>
     </div>
