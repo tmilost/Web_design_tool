@@ -41,19 +41,20 @@
     </div>
     <div class="mainCanvas" :style="zoomChange1">
       <div class="canvas" :style="deviceSizeValue">
-        <div>
-          asdasdasdasd asd asd asd asd asd asd asd asd asd asd asdasdasdasda sd
-          asd asd asd asd
-
-          <img src="@/assets/logo.png" alt="Italian Trulli" />
-        </div>
+        <!-- Canvas Theme \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/  \/ -->
+        <canvasTheme />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import canvasTheme from "@//components/canvasTheme.vue";
+
 export default {
+  components: {
+    canvasTheme,
+  },
   data() {
     return {
       zoomPercent: [
@@ -197,7 +198,7 @@ export default {
 }
 .canvas {
   overflow: scroll;
-  background-color: antiquewhite;
+  background-color: #ffff;
 }
 .tool-bar {
   background: #4d575f;
