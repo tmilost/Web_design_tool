@@ -2,7 +2,7 @@
   <div class="panel" v-on:drop="drop" v-on:dragover="allowDrop">
     <div class="tool-bar">
       <svg
-        style="width:24px;height:24px;color: #fff;"
+        style="width:21px;height:21px;color: #fff;"
         viewBox="0 0 24 24"
         v-on:click="caculateZoomUp()"
       >
@@ -13,7 +13,7 @@
       </svg>
 
       <svg
-        style="width:24px;height:24px;color: #fff;"
+        style="width:21px;height:21px;color: #fff;"
         viewBox="0 0 24 24"
         v-on:click="caculateZoomDown()"
       >
@@ -22,6 +22,7 @@
           d="M15.5,14H14.71L14.43,13.73C15.41,12.59 16,11.11 16,9.5A6.5,6.5 0 0,0 9.5,3A6.5,6.5 0 0,0 3,9.5A6.5,6.5 0 0,0 9.5,16C11.11,16 12.59,15.41 13.73,14.43L14,14.71V15.5L19,20.5L20.5,19L15.5,14M9.5,14C7,14 5,12 5,9.5C5,7 7,5 9.5,5C12,5 14,7 14,9.5C14,12 12,14 9.5,14M7,9H12V10H7V9Z"
         />
       </svg>
+      <p>{{ zoomChange }}</p>
       <el-dropdown>
         <span class="el-dropdown-link">
           {{ changeString(deviceSizeValue) }}
@@ -37,8 +38,6 @@
           </div>
         </el-dropdown-menu>
       </el-dropdown>
-      <p>@</p>
-      <p>{{ zoomChange }}</p>
     </div>
     <div class="mainCanvas" :style="zoomChange1">
       <div class="canvas" :style="deviceSizeValue">
@@ -157,12 +156,15 @@ export default {
       ];
     },
     changeString(str) {
-      var i = str.indexOf(";");
+      var a = str.indexOf(";");
+      var b = str.indexOf(":");
       str = str.split("");
-
-      str[i] = " x ";
+      str[a] = " | ";
+      str[b] = " = ";
       var c = str.indexOf(";");
+      var d = str.indexOf(":");
       str[c] = "  ";
+      str[d] = " = ";
       str = str.join("");
       return str;
     },
@@ -203,7 +205,7 @@ export default {
 }
 svg {
   padding: 1px;
-  margin: 5px;
+  margin: 7px;
   float: left;
 }
 svg:hover {
@@ -212,8 +214,19 @@ svg:hover {
 .el-dropdown {
   color: #fff;
   padding: 1px;
-  margin: 7px;
+  margin: 9px 0px 9px 15px;
   float: left;
+  font-size: 12px;
+}
+.el-dropdown-menu {
+  background-color: #2c3134;
+
+  border-color: #2c3134;
+}
+.el-dropdown-menu__item {
+  color: #fff;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 12px;
 }
 p {
   float: left;
