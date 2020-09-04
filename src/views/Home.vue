@@ -28,5 +28,6 @@ export default {
 .home {
   height: 100vh;
   width: 100vw;
+  background: radial-gradient(#262a2d, #212527);
 }
 </style>

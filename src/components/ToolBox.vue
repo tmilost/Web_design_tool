@@ -116,9 +116,11 @@ export default {
 .toolBox {
   height: calc(100vh - 37px);
   float: left;
-  padding-top: 2px;
+  margin-top: 2px;
   padding-right: 2px;
-  background: radial-gradient(#262a2d, #212527);
+  /* saved this for later */
+  /* background: radial-gradient(#262a2d, #212527); */
+  background-color: #2c3134;
 }
 .toolboxSize {
   width: 250px;
