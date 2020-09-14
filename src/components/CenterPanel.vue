@@ -185,7 +185,7 @@ export default {
 .panel {
   margin: auto;
   width: calc(100vw - 481px);
-  height: calc(100vh - 37px);
+  height: calc(100vh - 230px);
   background: radial-gradient(#262a2d, #212527);
   float: left;
   padding-top: 2px;
