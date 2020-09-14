@@ -3,6 +3,7 @@
     <Menu />
     <ToolBox />
     <CenterPanel />
+    <BottomPanel />
     <RightPanel />
   </div>
 </template>
@@ -13,6 +14,7 @@ import ToolBox from "@/components/ToolBox.vue";
 import CenterPanel from "@//components/CenterPanel.vue";
 import Menu from "@//components/Menu.vue";
 import RightPanel from "@//components/RightPanel.vue";
+import BottomPanel from "@//components/BottomPanel.vue";
 
 export default {
   name: "Home",
@@ -21,6 +23,7 @@ export default {
     CenterPanel,
     Menu,
     RightPanel,
+    BottomPanel,
   },
 };
 </script>
