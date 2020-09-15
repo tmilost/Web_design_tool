@@ -4,6 +4,7 @@
       class="svg"
       style="width:20px;height:22px;color: #DDEAF1;"
       viewBox="0 0 24 24"
+      v-on:click="demoMessage()"
     >
       <path
         fill="currentColor"
@@ -14,6 +15,7 @@
       class="svg"
       style="width:24px;height:22px;color: #FFA430;"
       viewBox="0 0 24 24"
+      v-on:click="demoMessage()"
     >
       <path
         fill="currentColor"
@@ -24,6 +26,7 @@
       class="svg"
       style="width:24px;height:22px;color: #31c5f0;"
       viewBox="0 0 24 24"
+      v-on:click="demoMessage()"
     >
       <path
         fill="currentColor"
@@ -34,6 +37,7 @@
       class="svg"
       style="width:24px;height:22px;color: #FF4A4C;"
       viewBox="0 0 24 24"
+      v-on:click="demoMessage()"
     >
       <path
         fill="currentColor"
@@ -44,7 +48,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    demoMessage() {
+      alert("This feature is not available in the web demo.");
+    },
+  },
+};
 </script>
 <style scoped>
 .menu {
