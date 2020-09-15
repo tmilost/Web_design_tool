@@ -39,31 +39,31 @@
         </el-dropdown-menu>
       </el-dropdown>
       <div class="deviceType">
-        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <svg style="width:21px;height:21px;color: #fff;" viewBox="0 0 24 24">
           <path
             fill="currentColor"
             d="M17.25,18H6.75V4H17.25M14,21H10V20H14M16,1H8A3,3 0 0,0 5,4V20A3,3 0 0,0 8,23H16A3,3 0 0,0 19,20V4A3,3 0 0,0 16,1Z"
           />
         </svg>
-        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <svg style="width:21px;height:21px;color: #fff;" viewBox="0 0 24 24">
           <path
             fill="currentColor"
             d="M19.25,19H4.75V3H19.25M14,22H10V21H14M18,0H6A3,3 0 0,0 3,3V21A3,3 0 0,0 6,24H18A3,3 0 0,0 21,21V3A3,3 0 0,0 18,0Z"
           />
         </svg>
-        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <svg style="width:21px;height:21px;color: #fff;" viewBox="0 0 24 24">
           <path
             fill="currentColor"
             d="M19,18H5V6H19M21,4H3C1.89,4 1,4.89 1,6V18A2,2 0 0,0 3,20H21A2,2 0 0,0 23,18V6C23,4.89 22.1,4 21,4Z"
           />
         </svg>
-        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <svg style="width:21px;height:21px;color: #fff;" viewBox="0 0 24 24">
           <path
             fill="currentColor"
             d="M12,19A1,1 0 0,1 11,18A1,1 0 0,1 12,17A1,1 0 0,1 13,18A1,1 0 0,1 12,19M4,5H20V16H4M20,18A2,2 0 0,0 22,16V5C22,3.89 21.1,3 20,3H4C2.89,3 2,3.89 2,5V16A2,2 0 0,0 4,18H0A2,2 0 0,0 2,20H22A2,2 0 0,0 24,18H20Z"
           />
         </svg>
-        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <svg style="width:21px;height:21px;color: #fff;" viewBox="0 0 24 24">
           <path
             fill="currentColor"
             d="M21,16H3V4H21M21,2H3C1.89,2 1,2.89 1,4V16A2,2 0 0,0 3,18H10V20H8V22H16V20H14V18H21A2,2 0 0,0 23,16V4C23,2.89 22.1,2 21,2Z"
@@ -283,5 +283,9 @@ p {
   margin: 9px 0px 9px 0px;
   color: #fff;
   font-size: 12px;
+}
+.deviceType{
+float:right;
+margin-right: 15px;
 }
 </style>
