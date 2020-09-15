@@ -151,6 +151,7 @@ export default {
 .tree {
   margin-top: 25px;
   background-color: #2c3134;
+  overflow-y: scroll;
 }
 .el-tree {
   background-color: #2c3134 !important;
