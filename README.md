@@ -1,4 +1,4 @@
-# vue_component_design_tool
+# Web_design_tool
 
 ## Project setup
 ```
