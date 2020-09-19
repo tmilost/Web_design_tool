@@ -284,8 +284,8 @@ p {
   color: #fff;
   font-size: 12px;
 }
-.deviceType{
-float:right;
-margin-right: 15px;
+.deviceType {
+  float: right;
+  margin-right: 15px;
 }
 </style>
